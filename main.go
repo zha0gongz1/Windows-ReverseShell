@@ -41,7 +41,7 @@ func main() {
 		log.Println(err)
 	}
 
-	destination, err = getSockaddr(windows.AF_INET, net.ParseIP("192.168.1.23"), 1234)
+	destination, err = getSockaddr(windows.AF_INET, net.ParseIP("192.168.146.1"), 1234)
 	if err != nil {
 		log.Println(err)
 	}
