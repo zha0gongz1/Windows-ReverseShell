@@ -1,5 +1,6 @@
 package main
-
+//Time:2021/12/19
+//ID:zha0gongz1
 
 import (
 	"golang.org/x/sys/windows"
@@ -14,7 +15,7 @@ var (
 	destination	windows.Sockaddr
 )
 
-func ipToSockaddr(family int, ip net.IP, port int) (windows.Sockaddr, error) {
+func getSockaddr(family int, ip net.IP, port int) (windows.Sockaddr, error) {
 	switch family {
 	case syscall.AF_INET:
 		if len(ip) == 0 {
@@ -40,7 +41,7 @@ func main() {
 		log.Println(err)
 	}
 
-	destination, err = ipToSockaddr(windows.AF_INET, net.ParseIP("192.168.1.23"), 1234)
+	destination, err = getSockaddr(windows.AF_INET, net.ParseIP("192.168.1.23"), 1234)
 	if err != nil {
 		log.Println(err)
 	}
